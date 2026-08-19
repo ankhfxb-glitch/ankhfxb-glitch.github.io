@@ -14,7 +14,7 @@ let lastTouch = 0;
 function preloadNext() {
   const next = (index % TOTAL) + 1;
   const preload = new Image();
-  preload.src = `images/${String(next).padStart(2,"0")}.webp`;
+  preload.src = `images/${String(next).padStart(2,"0")}.webp?v=2`;
 }
 
 function show(next) {
@@ -22,7 +22,7 @@ function show(next) {
   const number = String(index).padStart(2,"0");
   artwork.classList.add("changing");
   window.setTimeout(() => {
-    image.src = `images/${number}.webp`;
+    image.src = `images/${number}.webp?v=2`;
     image.alt = `星云像，作品切片 ${index}，共 ${TOTAL} 张`;
     counter.textContent = number;
     image.onload = () => {
