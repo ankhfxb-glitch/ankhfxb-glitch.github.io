@@ -11,9 +11,10 @@ let touchStart = 0;
 let lastClick = 0;
 let lastTouch = 0;
 
-for (let i = 2; i <= Math.min(5, TOTAL); i++) {
+function preloadNext() {
+  const next = (index % TOTAL) + 1;
   const preload = new Image();
-  preload.src = `images/${String(i).padStart(2,"0")}.webp`;
+  preload.src = `images/${String(next).padStart(2,"0")}.webp`;
 }
 
 function show(next) {
@@ -24,7 +25,10 @@ function show(next) {
     image.src = `images/${number}.webp`;
     image.alt = `星云像，作品切片 ${index}，共 ${TOTAL} 张`;
     counter.textContent = number;
-    image.onload = () => artwork.classList.remove("changing");
+    image.onload = () => {
+      artwork.classList.remove("changing");
+      window.setTimeout(preloadNext, 500);
+    };
   }, 180);
   hint.classList.add("hidden");
 }
@@ -55,3 +59,5 @@ if (MUSIC_FILE) {
     else { audio.pause(); sound.textContent = "声音：关"; }
   });
 }
+
+window.addEventListener("load", () => window.setTimeout(preloadNext, 800), {once:true});
