@@ -6,14 +6,15 @@
   <meta name="theme-color" content="#f6f6f3">
   <meta name="description" content="冯学炳作品《星云像：秩序的褶皱》">
   <title>《星云像：秩序的褶皱》— 冯学炳</title>
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
   <main class="viewer" aria-label="星云像作品浏览">
     <header class="edge top">
-      <h1>《星云像：秩序的褶皱》</h1>
+      <h1>《星云像：秩序的褶皱》<span class="artist">冯学炳</span></h1>
       <p><span id="current">01</span><span class="slash">/</span>35</p>
     </header>
+
 
     <section class="statement-inline" aria-label="作品说明">
       <p>从不同尺度中的“生成”出发，尝试在地质、城市与宇宙之间建立一种非线性的视觉关系。</p>
@@ -22,9 +23,11 @@
       <p>作品并不试图证明这些系统具有相同的运行机制，而是借由图像的技术转译，将不同时间尺度中的生成、扩张、沉积与消逝压缩进同一个视觉场。在观看距离的变化中，图像不断游移于城市、地质、星云与身体之间，最终形成一种无法被单一对象命名的生成性图景。</p>
     </section>
 
+
     <button class="artwork" id="next" type="button" aria-label="点击图片左半边查看上一张，右半边查看下一张">
       <img id="image" src="images/01.webp?v=2" alt="星云像，作品切片 1，共 35 张" draggable="false">
     </button>
+
 
     <footer class="edge bottom">
       <button class="text-button sound" id="sound" type="button" hidden>声音：关</button>
@@ -32,7 +35,6 @@
     </footer>
   </main>
 
+
   <audio id="audio" loop preload="none"></audio>
   <script src="script.js?v=4"></script>
-</body>
-</html>
